@@ -5,6 +5,7 @@ import Entity.Movable;
 import Repo.FigureRepo;
 
 public class FigureService implements Movable {
+
     private FigureRepo figureRepo;
 
     public FigureService() {
@@ -20,6 +21,10 @@ public class FigureService implements Movable {
     }
 
     public void roll() {
+    }
+
+    public boolean isGameOver() {
+        return false;
     }
 
     public void add(Figure figure){

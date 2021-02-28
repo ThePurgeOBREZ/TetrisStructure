@@ -12,15 +12,22 @@ public class FigureMenu {
 
     public void chooseTheAction() {
         Scanner in = new Scanner(System.in);
-        if (choice == "Space") {
-            figureService.roll();
-        } else if (choice == "a") {
-            figureService.moveLeft();
-        } else if (choice == "d") {
-            figureService.moveRight();
+        switch (choice) {
+            case "Space":
+                figureService.roll();
+                break;
+            case "a":
+                figureService.moveLeft();
+                break;
+            case "d":
+                figureService.moveRight();
+                break;
         }
         figureService.moveDown();
-        chooseTheAction();
+        if (!figureService.isGameOver()) {
+            chooseTheAction();
+        }
+
     }
 
     public void roll(FigureService figureService){
@@ -37,5 +44,9 @@ public class FigureMenu {
 
     public void moveDown(FigureService figureService){
         figureService.moveDown();
+    }
+
+    public void isGameOver(FigureService figureService){
+        figureService.isGameOver();
     }
 }
