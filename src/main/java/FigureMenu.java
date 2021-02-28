@@ -27,7 +27,6 @@ public class FigureMenu {
         if (!figureService.isGameOver()) {
             chooseTheAction();
         }
-
     }
 
     public void roll(FigureService figureService){
